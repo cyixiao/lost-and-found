@@ -17,8 +17,7 @@ db.serialize(() => {
         finder_id INTEGER,
         claimer_id INTEGER,
         found_date DATETIME,
-        claimed_date DATETIME,
-        return_date DATETIME,
+        description TEXT,
         FOREIGN KEY (finder_id) REFERENCES Users(user_id),
         FOREIGN KEY (claimer_id) REFERENCES Users(user_id)
     )`);
@@ -28,7 +27,6 @@ db.serialize(() => {
         item_id INTEGER NOT NULL,
         claimer_id INTEGER NOT NULL,
         contact_info TEXT NOT NULL,
-        claim_date DATETIME NOT NULL,
         status INTEGER NOT NULL,
         FOREIGN KEY (item_id) REFERENCES Items(item_id),
         FOREIGN KEY (claimer_id) REFERENCES Users(user_id)
