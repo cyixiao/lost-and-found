@@ -62,9 +62,49 @@ app.post('/item/delete/:item_id', async (req, res) => {
     }
 });
 
+app.get('/login', async (req, res) => {
+    try {
+        const database = await db;
+        let username = req.body.username;
+        let pswd = req.body.password;
+        let user = await database.get("SELECT * FROM Users WHERE username = ?", [username])
+        if (!user) {
+            return res.status(404).send("Login Username Not Found. Go Sign Up");
+        }
+        else if (user.password != pswd) {
+            console.log(user)
+            return res.status(404).send("Incorrect Password! Try Agian.")
+        }
+        else {
+            return res.status(200).send("Login successfully!");
+        }
+    }
+    catch (error) {
+        return res.status(500).send("Uncaught Error");
+    }
+});
+
+app.post('/signup', async (req, res) => {
+    try {
+        const database = await db;
+        let username = req.body.username;
+        let password =req.body.password;
+        let contact_info = req.body.contact_info;
+        if (!username || username=="" || !password || password=="" || !contact_info || contact_info=="") {
+            return res.status(404).send("Invalid Information");
+        }
+        let username_exist = await database.get("SELECT username FROM Users WHERE username = ?", [username])
+        if (username_exist) {
+            return res.status(404).send("Username Existed");
+        }
+        await database.run("INSERT INTO Users (username, password, contact_info) VALUES (?, ?, ?)", [username, password, contact_info]);
+         return res.status(200).send("Signup successfully!");
+    }
+    catch(error) {
+        return res.status(500).send("Uncaught Error");
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
-
-
