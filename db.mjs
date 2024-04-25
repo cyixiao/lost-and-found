@@ -1,15 +1,16 @@
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./lost_and_found.db');
+import {Database} from 'sqlite-async';
 
-db.serialize(() => {
-    db.run(`CREATE TABLE IF NOT EXISTS Users (
+async function setupDatabase() {
+    const db = await Database.open('lost_and_found.sqlite');
+  
+    await db.run(`CREATE TABLE IF NOT EXISTS Users (
         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT UNIQUE NOT NULL,
         password TEXT NOT NULL,
         contact_info TEXT NOT NULL
     )`);
-
-    db.run(`CREATE TABLE IF NOT EXISTS Items (
+    
+    await db.run(`CREATE TABLE IF NOT EXISTS Items (
         item_id INTEGER PRIMARY KEY AUTOINCREMENT,
         type TEXT NOT NULL,
         location TEXT NOT NULL,
@@ -21,8 +22,8 @@ db.serialize(() => {
         FOREIGN KEY (finder_id) REFERENCES Users(user_id),
         FOREIGN KEY (claimer_id) REFERENCES Users(user_id)
     )`);
-
-    db.run(`CREATE TABLE IF NOT EXISTS Claims (
+    
+    await db.run(`CREATE TABLE IF NOT EXISTS Claims (
         claim_id INTEGER PRIMARY KEY AUTOINCREMENT,
         item_id INTEGER NOT NULL,
         claimer_id INTEGER NOT NULL,
@@ -30,8 +31,11 @@ db.serialize(() => {
         status INTEGER NOT NULL,
         FOREIGN KEY (item_id) REFERENCES Items(item_id),
         FOREIGN KEY (claimer_id) REFERENCES Users(user_id)
-    )`, () => {
-        console.log('Database and tables created!');
-        db.close();
-    });
-});
+    )`);
+
+    db.close();
+  }
+  
+setupDatabase();
+
+export let db = await Database.open('lost_and_found.sqlite');
