@@ -80,7 +80,7 @@ app.get('/login', async (req, res) => {
         }
     }
     catch (error) {
-        return res.status(500).send("Uncaught Error");
+        return res.status(500).send("Internal Server Error: " + error.message);
     }
 });
 
