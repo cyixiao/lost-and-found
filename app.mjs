@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import session from 'express-session';
 import { db } from './db.mjs';
 
 const app = express();
@@ -7,6 +8,18 @@ const port = 3000;
 
 app.use(bodyParser.json());
 app.use('/public', express.static('public'));
+
+app.use(session({
+    secret: 'lost_found_secret_key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.send("Logged out successfully");
+});
 
 // 创建新item
 app.post('/item', async (req, res) => {
@@ -55,6 +68,17 @@ app.get('/items/user/:user_id', async (req, res) => {
     }
 });
 
+// 某用户提交找回的所有items
+app.get('/items/claim/:user_id', async (req, res) => {
+    const { user_id } = req.params;
+    try {
+        const claims = await db.all("SELECT * FROM Items JOIN Claims ON Items.item_id = Claims.item_id WHERE Claims.claimer_id = ? AND Claims.status = 0", [user_id]);
+        res.json(claims);
+    } catch (error) {
+        res.status(500).send("Internal Server Error: " + error.message);
+    }
+});
+
 // 删除特定item， 
 app.post('/item/delete/:item_id', async (req, res) => {
     const { item_id } = req.params;
@@ -68,16 +92,16 @@ app.post('/item/delete/:item_id', async (req, res) => {
 });
 
 // 登录，返回改用户id
-app.get('/login', async (req, res) => {
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
     try {
-        const { username, password } = req.body;
         const user = await db.get("SELECT * FROM Users WHERE username = ?", [username]);
-
         if (!user) {
             return res.status(404).send("Login Username Not Found. Go Sign Up");
         } else if (user.password !== password) {
             return res.status(401).send("Incorrect Password! Try Again.");
         } else {
+            req.session.userId = user.user_id;
             return res.status(200).json({ message: "Login successfully!", userId: user.user_id });
         }
     } catch (error) {
