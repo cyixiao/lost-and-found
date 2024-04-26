@@ -1,3 +1,3 @@
-import {db} from './db.mjs';
+import { db } from "./db.mjs";
 
 db.close();
