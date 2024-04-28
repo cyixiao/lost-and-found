@@ -1,0 +1,117 @@
+body {
+    background-color: rgb(103, 149, 82);
+    font-family: 'Asap', sans-serif;
+}
+
+h2{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 18%;
+    left: 45%;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+p{
+    font-weight: bold;
+    position: absolute;
+    right: 40px;
+    bottom: 12px;
+    color: rgba(248, 248, 248, 0.985);
+    font-size: 18px;
+}
+
+a {
+    text-decoration: underline;
+    color: rgba(248, 248, 248, 0.985);
+    font-weight: bold;
+    position: relative;
+    left: 5%;
+}
+
+#login-form{
+    overflow: hidden;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    transition: transform 300ms, box-shadow 300ms;
+    box-shadow: 5px 10px 10px var(rgba(2, 128, 144, 1), 0.2);
+}
+
+#login-form::before,
+#login-form::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 40%;
+    z-index: -1;
+}
+
+#login-form::before {
+    left: 40%;
+    bottom: -130%;
+    background-color: rgba(69, 105, 144, 0.15);
+    animation: wawes 6s infinite linear;
+}
+
+#login-form::after {
+    left: 35%;
+    bottom: -125%;
+    background-color: rgba(2, 128, 144, 0.2);
+    animation: wawes 7s infinite;
+}
+
+#login-form > input,
+#login-form > button {
+    font-family: 'Asap', sans-serif;
+}
+
+#login-form > input {
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px -10px;
+}
+#login-form > button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 80px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+    background-color: rgb(150, 213, 120);
+    transition: background-color 300ms;
+}
+
+#login-form > button:hover {
+    background-color: rgb(69, 153, 66);
+}
+
+@keyframes wawes {
+    from {
+        transform: rotate(0);
+}
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+

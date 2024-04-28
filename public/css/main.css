@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Roboto');
+
+:root {
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: white;
+    --select-bg: rgba(255, 255, 255, 0.2);
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    background-color: rgb(150, 202, 127);
+    font-family: 'Asap', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+#inspirational-quote{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 25px;
+    color:rgb(233, 233, 144);
+    text-shadow: 2px 2px 1px rgb(85, 85, 44);
+
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+h1{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    font-weight: bolder;
+
+}
+
+
+.itemSection{
+    margin-top: 30px;
+    position: absolute;
+    left:20%;
+    top: 25%;
+}
+
+h2{
+    margin-top: 40px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+p{
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+
+
+
+#type-selector {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+
+    width: 20rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: rgb(15, 82, 18);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+    &::-ms-expand {
+    display: none;
+    }
+
+    &:focus {
+    outline: none;
+    }
+
+    option {
+        color: inherit;
+        background-color: var(rgb(59, 156, 48));
+    }
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 200px;
+    margin-top: 20px;
+    position: absolute;
+    left:75%;
+    top: 30%;
+}
+
+.sidebar {
+    width: 200px;
+    height: 300px;
+    padding: 20px;
+    background-color: #499631; 
+    border: 2px solid #d7db63; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 28px;
+    border: none;
+    background-color: #499631; /* Green background color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.sidebar button:hover {
+    transform: scale(1.1);
+}
+

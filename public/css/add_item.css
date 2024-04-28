@@ -1,0 +1,132 @@
+:root {
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: white;
+    --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    background-color: rgb(150, 202, 127);
+    font-family: 'Asap', sans-serif;
+}
+
+h2{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0%;
+    left: 39%;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#add-item-form{
+    overflow: hidden;
+    background-color: rgb(226, 249, 203);
+    padding: 60px 70px 50px 70px;
+    border-radius: 10px;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+
+
+#add-item-form::before {
+    left: 40%;
+    bottom: -130%;
+}
+
+#add-item-form::after {
+    left: 35%;
+    bottom: -125%;
+
+}
+
+#add-item-form > input,
+#add-item-form > button {
+    font-family: 'Asap', sans-serif;
+}
+
+#add-item-form > input {
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 20px -10px;
+}
+
+#add-item-form > button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 120px;
+    height: 50px;
+    border: 0;
+    padding: 10px 0;
+    margin-top: 30px;
+    margin-left: 75px;
+    border-radius: 5px;
+    background-color: rgb(107, 170, 78);
+    transition: background-color 300ms;
+    display: inline-block;
+}
+
+#add-item-form > button:hover {
+    background-color: rgb(69, 153, 66);
+    transform: scale(1.1); 
+}
+
+
+#item-type {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+
+    width: 20rem;
+    padding: 1rem 4rem 1rem 1rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: rgb(221, 228, 213);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(52, 101, 39, 0.2);
+    cursor: pointer;
+    background-color: rgb(49, 162, 58);
+
+    &::-ms-expand {
+    display: none;
+    }
+
+    &:focus {
+    outline: none;
+    }
+
+    option {
+        color: inherit;
+        background-color: var(rgb(59, 156, 48));
+    }
+}
+
+p{
+    font-size: 18px;
+    color:rgb(47, 108, 30);
+    font-weight: bold;
+}

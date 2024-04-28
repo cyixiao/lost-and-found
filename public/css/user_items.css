@@ -1,0 +1,51 @@
+body{
+    background-color: rgb(150, 202, 127);
+    font-family: 'Asap', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1 {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+#back-button {
+    width: 100px;
+    padding: 10px 20px;
+    background-color: darkgreen; 
+    color: #fff; /* Button text color */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#back-button:hover {
+    transform: scale(1.1);
+}
+
+#user-items-list{
+    width: 500px;
+    padding: 20px;
+    text-align: center;
+}
+
+.item{
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
