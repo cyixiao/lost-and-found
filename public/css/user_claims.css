@@ -1,6 +1,6 @@
 body{
     background-color: rgb(150, 202, 127);
-    font-family: 'Asap', sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     display: flex;
     flex-direction: column;
 }
@@ -37,7 +37,7 @@ h1 {
     margin-top: 20px;
     border-collapse: collapse;
     background-color: #ffffcc; 
-    font-family: 'Asap', sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     border-radius: 5px;
 }
 
@@ -50,11 +50,11 @@ h1 {
 #claims-list td {
     border-bottom: 1px solid #ddd;
     padding: 12px;
-    text-align: left; /* Ensure text alignment */
+    text-align: left;
 }
 
 #claims-list tr:hover {
-    background-color: lightgreen; /* Light gray */
+    background-color: lightgreen;
 }
 
 #claims-list button {
