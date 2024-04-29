@@ -177,13 +177,13 @@ p {
 }
 
 #items td {
-  border-bottom: 1px solid rgba(221, 221, 221, 0.5); /* light gray with 50% opacity */
+  border-bottom: 1px solid rgba(221, 221, 221, 0.5);
   padding: 12px;
-  text-align: left; /* Ensure text alignment */
+  text-align: left;
 }
 
 #items tr:hover {
-  background-color: rgba(144, 238, 144, 0.5); /* light green with 50% opacity */
+  background-color: rgba(144, 238, 144, 0.5);
 }
 
 img {
