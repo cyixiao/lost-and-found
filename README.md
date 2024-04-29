@@ -67,8 +67,6 @@ The API provides a simple endpoint to retrieve random quotes, making it easy for
 
 For more information about the API and its usage, please refer to the [API Ninjas Quotes API documentation](https://api-ninjas.com/api/quotes).
 
-### Presentation Link
-
 ### Demo Presentation
 
 To get a visual walkthrough of our Lost and Found Website and its features, please check out our demo presentation:
@@ -77,6 +75,3 @@ To get a visual walkthrough of our Lost and Found Website and its features, plea
 This presentation provides an overview of the functionality and user experience of our platform, including how to report lost items, search for found items, and manage user profiles.
 
 Feel free to explore the presentation to learn more about our project!
-
-
-
