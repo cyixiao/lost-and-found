@@ -1,95 +1,93 @@
 body {
-    background-color: rgb(124, 177, 99);
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: rgb(124, 177, 99);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h2{
-    font-size: 50px;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 5%;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+h2 {
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 5%;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-#signup-form{
-    overflow: hidden;
-    background-color: rgb(226, 249, 203);
-    padding: 80px 70px 50px 70px;
-    border-radius: 10px;
-    position: absolute;
-    top: 57%;
-    left: 50%;
-    width: 500px;
-    transform: translate(-50%, -50%);
+#signup-form {
+  overflow: hidden;
+  background-color: rgb(226, 249, 203);
+  padding: 80px 70px 50px 70px;
+  border-radius: 10px;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  width: 500px;
+  transform: translate(-50%, -50%);
 }
-
 
 #signup-form::before,
 #signup-form::after {
-    content: '';
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-top-left-radius: 40%;
-    border-top-right-radius: 45%;
-    border-bottom-left-radius: 35%;
-    border-bottom-right-radius: 40%;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
 }
 
 #signup-form::before {
-    left: 40%;
-    bottom: -130%;
+  left: 40%;
+  bottom: -130%;
 }
 
 #signup-form::after {
-    left: 35%;
-    bottom: -125%;
-
+  left: 35%;
+  bottom: -125%;
 }
 
 #signup-form > input,
 #signup-form > button {
-    font-family: 'Asap', sans-serif;
+  font-family: "Asap", sans-serif;
 }
 
 #signup-form > input {
-    display: block;
-    border-radius: 5px;
-    font-size: 16px;
-    background: white;
-    width: 100%;
-    border: 0;
-    padding: 10px 10px;
-    margin: 20px -10px;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  margin: 20px -10px;
 }
 
 #signup-form > button {
-    cursor: pointer;
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    width: 120px;
-    height: 50px;
-    border: 0;
-    padding: 10px 0;
-    margin-top: 40px;
-    margin-left: 185px;
-    border-radius: 5px;
-    background-color: rgb(107, 170, 78);
-    transition: background-color 300ms;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 120px;
+  height: 50px;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 40px;
+  margin-left: 185px;
+  border-radius: 5px;
+  background-color: rgb(107, 170, 78);
+  transition: background-color 300ms;
 }
 
 #signup-form > button:hover {
-    background-color: rgb(69, 153, 66);
-    transform: scale(1.1); 
+  background-color: rgb(69, 153, 66);
+  transform: scale(1.1);
 }
 
-p{
-    font-size: 18px;
-    color:rgb(47, 108, 30);
-    font-weight: bold;
+p {
+  font-size: 18px;
+  color: rgb(47, 108, 30);
+  font-weight: bold;
 }

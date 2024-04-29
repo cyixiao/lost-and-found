@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (response.ok) {
       const items = await response.json();
-    const itemsList = document.getElementById("items-list");
-    itemsList.innerHTML = ""; 
+      const itemsList = document.getElementById("items-list");
+      itemsList.innerHTML = "";
 
-    items.forEach((item) => {
+      items.forEach((item) => {
         const row = document.createElement("tr");
 
         const typeCell = document.createElement("td");
@@ -38,25 +38,27 @@ document.addEventListener("DOMContentLoaded", function () {
         row.appendChild(descriptionCell);
 
         row.onclick = () => {
-            if (item.finder_id === parseInt(sessionStorage.getItem("userId"), 10)) {
-                alert("You cannot claim an item that you have found.");
-            } else {
-                const confirmClaim = confirm("Are you sure you want to claim this item?");
-                if (confirmClaim) {
-                    claimItem(item.item_id);
-                }
+          if (
+            item.finder_id === parseInt(sessionStorage.getItem("userId"), 10)
+          ) {
+            alert("You cannot claim an item that you have found.");
+          } else {
+            const confirmClaim = confirm(
+              "Are you sure you want to claim this item?"
+            );
+            if (confirmClaim) {
+              claimItem(item.item_id);
             }
+          }
         };
 
         itemsList.appendChild(row);
-    });
-} else {
-    itemsList.textContent = "Failed to load items.";
-}
-
+      });
+    } else {
+      itemsList.textContent = "Failed to load items.";
+    }
   }
 
-  // 当物品被点击，提交 claim
   async function claimItem(itemId) {
     const userId = sessionStorage.getItem("userId");
     const response = await fetch("/claim", {

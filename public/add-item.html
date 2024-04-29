@@ -11,13 +11,23 @@
     <form id="add-item-form">
       <p>Type:</p>
       <select id="item-type" required>
-        <option value="phone">Phone</option>
-        <option value="wallet">Wallet</option>
-        <option value="other">Other</option></select
-      ><br />
-      <p>Location:</p><input type="text" id="item-location" required /><br />
-      <p>Found Date:</p> <input type="date" placeholder= "Found Date" id="item-found-date" /><br />
-      <p>Description:</p><textarea id="item-description"></textarea><br />
+        <option value="all">All</option>
+        <option value="Bags">Bags</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Identification">Identification</option>
+        <option value="Keys">Keys</option>
+        <option value="Pets">Pets</option>
+        <option value="Personal Items">Personal Items</option>
+        <option value="Wallets">Wallets</option>
+        <option value="other">Other</option>
+      </select>
+      <br />
+      <p>Location:</p>
+      <input type="text" id="item-location" required /><br />
+      <p>Found Date:</p>
+      <input type="date" placeholder="Found Date" id="item-found-date" /><br />
+      <p>Description:</p>
+      <textarea id="item-description"></textarea><br />
       <button type="button" id="submit-item">Submit</button>
       <button type="button" id="cancel-item">Cancel</button>
     </form>

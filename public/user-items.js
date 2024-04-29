@@ -4,55 +4,86 @@ document.addEventListener("DOMContentLoaded", function () {
   async function loadUserItems() {
     const response = await fetch(`/items/user/${userId}`);
     const itemsList = document.getElementById("user-items-list");
-    itemsList.innerHTML = "";
 
     if (response.ok) {
       const items = await response.json();
+      const table = document.createElement("table");
+      const thead = table.createTHead();
+      const tbody = table.createTBody();
+      const headerRow = thead.insertRow();
+
+      const headers = [
+        "Delete",
+        "Type",
+        "Found Date",
+        "Location",
+        "Description",
+        "Claimer",
+        "Confirm Return",
+        "Dispute Claim",
+      ];
+      headers.forEach((headerText) => {
+        let header = document.createElement("th");
+        header.textContent = headerText;
+        headerRow.appendChild(header);
+      });
+
       for (const item of items) {
-        const itemContainer = document.createElement("div");
-        itemContainer.className = "item-container";
+        let row = tbody.insertRow();
 
-        // Item details
-        const itemDetails = document.createElement("div");
-        itemDetails.textContent = `Type: ${item.type}, Found Date: ${item.found_date}, Location: ${item.location}, Description: ${item.description}`;
-        itemContainer.appendChild(itemDetails);
+        let deleteCell = row.insertCell();
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌";
+        deleteButton.classList.add("delete-btn");
+        deleteButton.onclick = () => deleteItem(item.item_id);
+        deleteCell.appendChild(deleteButton);
 
-        // Delete button
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "❌";
-        deleteBtn.onclick = () => deleteItem(item.item_id);
-        itemContainer.appendChild(deleteBtn);
+        let typeCell = row.insertCell();
+        typeCell.textContent = item.type;
+        let foundDateCell = row.insertCell();
+        foundDateCell.textContent = item.found_date;
+        let locationCell = row.insertCell();
+        locationCell.textContent = item.location;
+        let descriptionCell = row.insertCell();
+        descriptionCell.textContent = item.description;
+        let claimerCell = row.insertCell();
+        let claimerInfo;
 
-        // Claimant contact info
         if (item.status === 1) {
           const claimInfoResponse = await fetch(`/claim/info/${item.item_id}`);
           if (claimInfoResponse.ok) {
             const claimInfo = await claimInfoResponse.json();
-            const contactInfoDiv = document.createElement("div");
-            contactInfoDiv.textContent = `${claimInfo.username}: ${claimInfo.contact_info}`;
-            itemContainer.appendChild(contactInfoDiv);
+            claimerInfo = `${claimInfo.username}: ${claimInfo.contact_info}`;
+          } else {
+            claimerInfo = "Failed to load claimer info";
           }
         } else {
-          const noClaimantDiv = document.createElement("div");
-          noClaimantDiv.textContent = "No claimant yet";
-          itemContainer.appendChild(noClaimantDiv);
+          claimerInfo = "No claimer yet";
         }
+        claimerCell.textContent = claimerInfo;
 
-        // Return confirmation button
-        if (item.status === 1) {
-          const confirmReturnBtn = document.createElement("button");
-          confirmReturnBtn.textContent = "✅";
-          confirmReturnBtn.onclick = () => confirmReturn(item.item_id);
-          itemContainer.appendChild(confirmReturnBtn);
+        let confirmReturnCell = row.insertCell();
+        let confirmReturnButton = document.createElement("button");
+        confirmReturnButton.textContent = "Returned";
+        confirmReturnButton.classList.add("confirm-btn");
+        confirmReturnButton.onclick = () => confirmReturn(item.item_id);
+        confirmReturnCell.appendChild(confirmReturnButton);
 
-          const returnItemBtn = document.createElement("button");
-          returnItemBtn.textContent = "Return";
-          returnItemBtn.onclick = () => returnItem(item.item_id);
-          itemContainer.appendChild(returnItemBtn);
+        let returnItemCell = row.insertCell();
+        let returnItemButton = document.createElement("button");
+        returnItemButton.textContent = "Dispute";
+        returnItemButton.classList.add("return-btn");
+        returnItemButton.onclick = () => returnItem(item.item_id);
+        returnItemCell.appendChild(returnItemButton);
+
+        if (item.status !== 1) {
+          confirmReturnButton.disabled = true;
+          returnItemButton.disabled = true;
         }
-
-        itemsList.appendChild(itemContainer);
       }
+
+      itemsList.innerHTML = "";
+      itemsList.appendChild(table);
     } else {
       itemsList.textContent = "Failed to load items.";
     }

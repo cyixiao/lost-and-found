@@ -1,199 +1,193 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Roboto');
+@import url("https://fonts.googleapis.com/css?family=Anton|Roboto");
 
 :root {
-    --arrow-bg: rgba(255, 255, 255, 0.4);
-    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
-    --option-bg: white;
-    --select-bg: rgba(255, 255, 255, 0.4);
+  --arrow-bg: rgba(255, 255, 255, 0.4);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.4);
 }
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-body{
-    background-color: rgb(150, 202, 127);
-    font-family: 'Asap', sans-serif;
-    display: flex;
-    flex-direction: column;
-    background-image: url('images/grass.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {
+  background-color: rgb(150, 202, 127);
+  font-family: "Asap", sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-image: url("images/grass.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .welcome-message {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    color: #ffefd5;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    display: inline-block;
-    margin: 1rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  color: #ffefd5;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: 1rem;
 }
 
-#inspirational-quote{
-    font-family: 'Brush Script MT', cursive;
-    font-size: 25px;
-    color: #ffefd5;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+#inspirational-quote {
+  font-family: "Brush Script MT", cursive;
+  font-size: 25px;
+  color: #ffefd5;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 header {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
-h1{
-    font-size: 50px;
-    color: rgb(255, 255, 255);
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-    font-weight: bolder;
-
-}
-
-
-.itemSection{
-    margin-top: 30px;
-    position: absolute;
-    left:20%;
-    top: 25%;
+h1 {
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  font-weight: bolder;
 }
 
-h2{
-    margin-top: 40px;
-    font-size: 20px;
-    color: #ffefd5;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+.itemSection {
+  margin-top: 30px;
+  position: absolute;
+  left: 20%;
+  top: 25%;
 }
 
-p{
-    font-size: 20px;
-    color: #ffefd5;
-    font-weight: bolder;
-    margin-top: 50px;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+h2 {
+  margin-top: 40px;
+  font-size: 20px;
+  color: #ffefd5;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-
+p {
+  font-size: 20px;
+  color: #ffefd5;
+  font-weight: bolder;
+  margin-top: 50px;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
 
 #type-selector {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    appearance: none; 
-    -webkit-appearance: none; 
-    -moz-appearance: none;appearance: none;
-    border: 0;
-    outline: 0;
-    font: inherit;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
 
-    width: 20rem;
-    padding: 1rem 4rem 1rem 1rem;
-    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
     linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
-    color: #ffefd5;
-    font-weight: bolder;
-    border-radius: 0.25em;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  color: #ffefd5;
+  font-weight: bolder;
+  border-radius: 0.25em;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 
-    &::-ms-expand {
+  &::-ms-expand {
     display: none;
-    }
+  }
 
-    &:focus {
+  &:focus {
     outline: none;
-    }
+  }
 
-    option {
-        color: inherit;
-        background-color: var(rgb(59, 156, 48));
-    }
-}
-
-.sidebar{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 200px;
-    margin-top: 20px;
-    position: absolute;
-    left:75%;
-    top: 30%;
+  option {
+    color: inherit;
+    background-color: var(rgb(59, 156, 48));
+  }
 }
 
 .sidebar {
-    width: 200px;
-    height: 300px;
-    padding: 20px;
-    background-color: rgba(146, 169, 87, 0.7);
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 200px;
+  margin-top: 20px;
+  position: absolute;
+  left: 75%;
+  top: 30%;
+}
+
+.sidebar {
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+  background-color: rgba(146, 169, 87, 0.7);
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 28px;
-    border: 1px solid transparent;
-    background-color: rgb(146, 169, 87);
-    color: white;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 28px;
+  border: 1px solid transparent;
+  background-color: rgb(146, 169, 87);
+  color: white;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sidebar button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    background-color: rgba(73, 166, 49, 0.9)
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(73, 166, 49, 0.9);
 }
 
-
 #items {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: rgba(255, 255, 204, 0.5); 
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: large;
-    border-radius: 5px;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgba(255, 255, 204, 0.5);
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: large;
+  border-radius: 5px;
 }
 
 #items th {
-    background-color: rgba(242, 242, 242, 0.5);
-    text-align: left;
-    padding: 15px;
+  background-color: rgba(242, 242, 242, 0.5);
+  text-align: left;
+  padding: 15px;
 }
 
 #items td {
-    border-bottom: 1px solid rgba(221, 221, 221, 0.5); /* light gray with 50% opacity */
-    padding: 12px;
-    text-align: left; /* Ensure text alignment */
+  border-bottom: 1px solid rgba(221, 221, 221, 0.5); /* light gray with 50% opacity */
+  padding: 12px;
+  text-align: left; /* Ensure text alignment */
 }
 
 #items tr:hover {
-    background-color: rgba(144, 238, 144, 0.5); /* light green with 50% opacity */
+  background-color: rgba(144, 238, 144, 0.5); /* light green with 50% opacity */
 }
 
-img{
-    z-index: -1;
-    position: absolute;
-    width: 100%;
+img {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
 }
-
-
-
