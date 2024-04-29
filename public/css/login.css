@@ -1,16 +1,17 @@
 body {
     background-color: rgb(103, 149, 82);
     font-family: 'Asap', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h2{
     font-size: 50px;
     color: rgb(255, 255, 255);
     position: absolute;
-    top: 18%;
-    left: 45%;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-
+    top: 15%
 }
 
 p{
@@ -85,6 +86,7 @@ a {
     border: 0;
     padding: 10px 10px;
     margin: 15px -10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 #login-form > button {
     cursor: pointer;

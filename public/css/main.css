@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Anton|Roboto');
 
 :root {
-    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-bg: rgba(255, 255, 255, 0.4);
     --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
     --option-bg: white;
-    --select-bg: rgba(255, 255, 255, 0.2);
+    --select-bg: rgba(255, 255, 255, 0.4);
 }
 body, html {
     margin: 0;
@@ -17,14 +17,29 @@ body{
     font-family: 'Asap', sans-serif;
     display: flex;
     flex-direction: column;
+    background-image: url('../grass.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.welcome-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ffefd5;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin: 1rem;
 }
 
 #inspirational-quote{
     font-family: 'Brush Script MT', cursive;
     font-size: 25px;
-    color:rgb(233, 233, 165);
-    text-shadow: 2px 2px 1px rgb(85, 85, 44);
-
+    color: #ffefd5;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -50,15 +65,18 @@ h1{
 h2{
     margin-top: 40px;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: #ffefd5;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 p{
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: #ffefd5;
     font-weight: bolder;
     margin-top: 50px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 
@@ -79,11 +97,11 @@ p{
     padding: 1rem 4rem 1rem 1rem;
     background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
     linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
-    color: rgb(136, 233, 154);
+    color: #ffefd5;
     font-weight: bolder;
     border-radius: 0.25em;
-    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 
     &::-ms-expand {
     display: none;
@@ -114,10 +132,10 @@ p{
     width: 200px;
     height: 300px;
     padding: 20px;
-    background-color: #499631; 
-    border: 2px solid #d7db63; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(146, 169, 87, 0.7);
     align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar button {
@@ -125,19 +143,24 @@ p{
     width: 100%;
     padding: 10px;
     margin-top: 28px;
-    border: none;
-    background-color: #499631; /* Green background color */
+    border: 1px solid transparent;
+    background-color: rgb(146, 169, 87);
     color: white;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sidebar button:hover {
-    transform: scale(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(73, 166, 49, 0.9)
 }
 
 
@@ -145,7 +168,8 @@ p{
     border-collapse: collapse;
     width: 100%;
     background-color: rgba(255, 255, 204, 0.5); 
-    font-family: 'Asap', sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: large;
     border-radius: 5px;
 }
 
