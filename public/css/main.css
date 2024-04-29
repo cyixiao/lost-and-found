@@ -17,7 +17,7 @@ body{
     font-family: 'Asap', sans-serif;
     display: flex;
     flex-direction: column;
-    background-image: url('../grass.jpg');
+    background-image: url('images/grass.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
