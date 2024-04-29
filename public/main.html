@@ -7,6 +7,7 @@
     <title>Main Page</title>
   </head>
   <body>
+    <img src = grass.jpg alt="bear">
     <header>
       <h1>Welcome, <span id="username-display"></span>!</h1>
       <div id="inspirational-quote">Loading quote...</div></header>
@@ -21,7 +22,18 @@
           <option value="other">Other</option>
         </select>  
         <h2>ITEMS</h2>
-        <div id="items-list">Loading items...</div>
+        <table id="items">
+          <thead>
+              <tr>
+                  <th>Type</th>
+                  <th>Found Date</th>
+                  <th>Location</th>
+                  <th>Description</th>
+              </tr>
+          </thead>
+          <tbody id="items-list">
+          </tbody>
+      </table>
       </div>
       
       
