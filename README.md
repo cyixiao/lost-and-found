@@ -60,3 +60,10 @@ The Claims table manages claims made by users for found items.
 The database schema is designed to facilitate the process of reporting lost items, searching for found items, and managing claims effectively, ensuring smooth coordination and communication among users.
 
 ### API Usage
+
+We have integrated a third-party API provided by [API Ninjas](https://api-ninjas.com/api/quotes) to generate inspirational quotes on the main page of our website. This API allows us to dynamically fetch motivational quotes to inspire and uplift our users.
+
+The API provides a simple endpoint to retrieve random quotes, making it easy for us to incorporate fresh and meaningful content into our platform.
+
+For more information about the API and its usage, please refer to the [API Ninjas Quotes API documentation](https://api-ninjas.com/api/quotes).
+
