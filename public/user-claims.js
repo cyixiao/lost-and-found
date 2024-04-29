@@ -11,42 +11,38 @@ document.addEventListener("DOMContentLoaded", function () {
       const claimsList = document.getElementById("claims-list");
       claimsList.innerHTML = "";
 
-      if (claims.length > 0) {
-        const table = document.createElement("table");
-        table.id = "claims-table";
+      const table = document.createElement("table");
+      table.id = "claims-table";
 
-        const headerRow = document.createElement("tr");
-        ["Type", "Found Date", "Location", "Description", "Delete"].forEach(
-          (headerText) => {
-            const th = document.createElement("th");
-            th.textContent = headerText;
-            headerRow.appendChild(th);
-          }
-        );
-        table.appendChild(headerRow);
+      const headerRow = document.createElement("tr");
+      ["Type", "Found Date", "Location", "Description", "Delete"].forEach(
+        (headerText) => {
+          const th = document.createElement("th");
+          th.textContent = headerText;
+          headerRow.appendChild(th);
+        }
+      );
+      table.appendChild(headerRow);
 
-        claims.forEach((claim) => {
-          const row = document.createElement("tr");
-          ["type", "found_date", "location", "description"].forEach((key) => {
-            const cell = document.createElement("td");
-            cell.textContent = claim[key];
-            row.appendChild(cell);
-          });
-
-          const deleteCell = document.createElement("td");
-          const deleteBtn = document.createElement("button");
-          deleteBtn.textContent = "❌";
-          deleteBtn.onclick = () => deleteClaim(claim.item_id);
-          deleteCell.appendChild(deleteBtn);
-          row.appendChild(deleteCell);
-
-          table.appendChild(row);
+      claims.forEach((claim) => {
+        const row = document.createElement("tr");
+        ["type", "found_date", "location", "description"].forEach((key) => {
+          const cell = document.createElement("td");
+          cell.textContent = claim[key];
+          row.appendChild(cell);
         });
 
-        claimsList.appendChild(table);
-      } else {
-        claimsList.textContent = "No claims found.";
-      }
+        const deleteCell = document.createElement("td");
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "❌";
+        deleteBtn.onclick = () => deleteClaim(claim.item_id);
+        deleteCell.appendChild(deleteBtn);
+        row.appendChild(deleteCell);
+
+        table.appendChild(row);
+      });
+
+      claimsList.appendChild(table);
     } else {
       claimsList.textContent = "Failed to load claims.";
     }
