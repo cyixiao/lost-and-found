@@ -33,30 +33,30 @@ Our Lost and Found Website utilizes a relational database to manage users, items
 The Users table stores information about registered users of the platform.
 
 - user_id: Unique identifier for each user (Primary Key).
-username: Username chosen by the user (Unique, Not Null).
-password: Encrypted password for user authentication (Not Null).
-contact_info: Contact information provided by the user (Not Null).
+- username: Username chosen by the user (Unique, Not Null).
+- password: Encrypted password for user authentication (Not Null).
+- contact_info: Contact information provided by the user (Not Null).
 
 #### Items Table
 The Items table keeps track of lost and found items reported by users.
 
-item_id: Unique identifier for each item (Primary Key).
-type: Type or category of the item (e.g., Phone, Wallet, Other) (Not Null).
-location: Location where the item was found or lost (Not Null).
-status: Status of the item (e.g., Lost, Found, Claimed) (Not Null).
-finder_id: Foreign key referencing the user_id of the user who found the item.
-claimer_id: Foreign key referencing the user_id of the user who claimed the item.
-found_date: Date and time when the item was found (DateTime).
-description: Description of the item provided by the user.
+- item_id: Unique identifier for each item (Primary Key).
+- type: Type or category of the item (e.g., Phone, Wallet, Other) (Not Null).
+- location: Location where the item was found or lost (Not Null).
+- status: Status of the item (e.g., Lost, Found, Claimed) (Not Null).
+- finder_id: Foreign key referencing the user_id of the user who found the item.
+- claimer_id: Foreign key referencing the user_id of the user who claimed the item.
+- found_date: Date and time when the item was found (DateTime).
+- description: Description of the item provided by the user.
 
 #### Claims Table
 The Claims table manages claims made by users for found items.
 
-claim_id: Unique identifier for each claim (Primary Key).
-item_id: Foreign key referencing the item_id of the claimed item (Not Null).
-claimer_id: Foreign key referencing the user_id of the user making the claim (Not Null).
-contact_info: Contact information provided by the claimant (Not Null).
-status: Status of the claim (e.g., Pending, Accepted, Rejected) (Not Null).
+- claim_id: Unique identifier for each claim (Primary Key).
+- item_id: Foreign key referencing the item_id of the claimed item (Not Null).
+- claimer_id: Foreign key referencing the user_id of the user making the claim (Not Null).
+- contact_info: Contact information provided by the claimant (Not Null).
+- status: Status of the claim (e.g., Pending, Accepted, Rejected) (Not Null).
 The database schema is designed to facilitate the process of reporting lost items, searching for found items, and managing claims effectively, ensuring smooth coordination and communication among users.
 
 ### API Usage
