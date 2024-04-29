@@ -32,7 +32,7 @@ Our Lost and Found Website utilizes a relational database to manage users, items
 #### Users Table
 The Users table stores information about registered users of the platform.
 
-user_id: Unique identifier for each user (Primary Key).
+- user_id: Unique identifier for each user (Primary Key).
 username: Username chosen by the user (Unique, Not Null).
 password: Encrypted password for user authentication (Not Null).
 contact_info: Contact information provided by the user (Not Null).
