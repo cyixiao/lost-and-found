@@ -61,7 +61,7 @@ The database schema is designed to facilitate the process of reporting lost item
 
 ### API Usage
 
-We have integrated a third-party API provided by [API Ninjas](https://api-ninjas.com/api/quotes) to generate inspirational quotes on the main page of our website. This API allows us to dynamically fetch motivational quotes to inspire and uplift our users.
+We have integrated a third-party API provided by [API Ninjas](https://api-ninjas.com/api) to generate inspirational quotes on the main page of our website. This API allows us to dynamically fetch motivational quotes to inspire and uplift our users.
 
 The API provides a simple endpoint to retrieve random quotes, making it easy for us to incorporate fresh and meaningful content into our platform.
 
