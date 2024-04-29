@@ -15,28 +15,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (response.ok) {
       const items = await response.json();
-      items.forEach((item) => {
-        const itemDiv = document.createElement("div");
-        itemDiv.textContent = `Type: ${item.type}, Found Date: ${item.found_date}, Location: ${item.location}, Description: ${item.description}`;
-        itemDiv.onclick = () => {
-          if (
-            item.finder_id === parseInt(sessionStorage.getItem("userId"), 10)
-          ) {
-            alert("You cannot claim an item that you have found.");
-          } else {
-            const confirmClaim = confirm(
-              "Are you sure you want to claim this item?"
-            );
-            if (confirmClaim) {
-              claimItem(item.item_id);
+    const itemsList = document.getElementById("items-list");
+    itemsList.innerHTML = ""; 
+
+    items.forEach((item) => {
+        const row = document.createElement("tr");
+
+        const typeCell = document.createElement("td");
+        typeCell.textContent = item.type;
+        row.appendChild(typeCell);
+
+        const foundDateCell = document.createElement("td");
+        foundDateCell.textContent = item.found_date;
+        row.appendChild(foundDateCell);
+
+        const locationCell = document.createElement("td");
+        locationCell.textContent = item.location;
+        row.appendChild(locationCell);
+
+        const descriptionCell = document.createElement("td");
+        descriptionCell.textContent = item.description;
+        row.appendChild(descriptionCell);
+
+        row.onclick = () => {
+            if (item.finder_id === parseInt(sessionStorage.getItem("userId"), 10)) {
+                alert("You cannot claim an item that you have found.");
+            } else {
+                const confirmClaim = confirm("Are you sure you want to claim this item?");
+                if (confirmClaim) {
+                    claimItem(item.item_id);
+                }
             }
-          }
         };
-        itemsList.appendChild(itemDiv);
-      });
-    } else {
-      itemsList.textContent = "Failed to load items.";
-    }
+
+        itemsList.appendChild(row);
+    });
+} else {
+    itemsList.textContent = "Failed to load items.";
+}
+
   }
 
   // 当物品被点击，提交 claim
