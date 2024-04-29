@@ -167,7 +167,6 @@ p {
   background-color: rgba(255, 255, 204, 0.5);
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: large;
-  border-radius: 5px;
 }
 
 #items th {
@@ -184,10 +183,4 @@ p {
 
 #items tr:hover {
   background-color: rgba(144, 238, 144, 0.5);
-}
-
-img {
-  z-index: -1;
-  position: absolute;
-  width: 100%;
 }
