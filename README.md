@@ -5,7 +5,7 @@ Welcome to our Lost and Found Website! This platform is designed to help users r
 
 Report Lost Items(Add New Item): Users can easily submit details about their lost items, including descriptions, locations, and contact information.
 
-Search for Found Items: Browse through the listings of found items to see if your lost belonging has been recovered by someone in the community and filter it out for different category, including Phone, Wallet, Other.
+Search for Found Items: Browse through the listings of found items to see if your lost belonging has been recovered by someone in the community and filter it out for different category, including Bag, Electronics, Keys, etc.
 
 Contact Owners: If you find an item that matches what you've lost, you can reach out to the owner with the contact information provided on our platform to arrange for its return.
 
