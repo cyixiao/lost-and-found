@@ -1,5 +1,4 @@
-# lost-and-found
-Lost and Found Website
+# Lost and Found
 Welcome to our Lost and Found Website! This platform is designed to help users report lost items, search for found items, and facilitate the reunification of lost belongings with their owners. Whether you've misplaced your keys, left your umbrella behind, or found a lost pet wandering the streets, our website aims to connect people and lost items efficiently.
 
 ### Features
